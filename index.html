@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"> -->
+    <script src="https://kit.fontawesome.com/2ab82024fd.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="home.css">
+    <style>
+        .query-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            background-color: rgba(25, 24, 24, 0.61);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+
+        .query-popup .close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .query-popup video {
+            max-width: 600px;
+            transform: scale(0);
+            outline: none;
+            transition: all .3s;
+        }
+
+        .show {
+            pointer-events: all;
+            opacity: 1;
+        }
+
+        .show video {
+            transform: scale(1);
+        }
+
+        .query-popup-form {
+            background-color: #fff;
+            width: 80%;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .query-popup-form-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            padding: 30px;
+        }
+
+        .query-popup-form-inner-left {
+            max-width: 50%;
+            padding: 10px;
+
+            /* background-color: red; */
+        }
+
+        .query-popup-form-inner-left h2 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #004ff5;
+        }
+
+        .query-popup-form-inner-left p {
+            text-align: center;
+            margin-bottom: 8px;
+
+        }
+
+        .query-popup-form-inner-left form input {
+            display: block;
+            width: 90%;
+            margin: auto;
+            margin-bottom: 10px;
+            padding: 10px;
+
+        }
+
+
+
+        .query-popup-form-inner-left form input:nth-child(3) {
+            display: block;
+        }
+
+        .query-popup-form-inner-left form textarea {
+            display: block;
+            margin: auto;
+            width: 90%;
+            margin-bottom: 10px;
+
+        }
+
+        .query-popup-form-inner-left form input:last-child {
+            background-color: #004ff5;
+            color: white;
+            border: none;
+
+        }
+
+        .query-popup-form-inner-left form input:last-child:hover {}
+
+        .query-popup-form-inner-right {
+            max-width: 50%;
+            height: 100%;
+            padding: 10px;
+        }
+
+        .query-popup-form-inner-right-imgbox {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .query-popup-form-inner-right-imgbox img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Query popup coding -->
+    <div class="query-popup">
+        <div class="query-popup-form">
+            <span class="close">&#10006</span>
+            <div class="query-popup-form-inner">
+                <div class="query-popup-form-inner-left">
+                    <h2>Talk To Our Experts</h2>
+                    <p>Please fill in the details below to share your business needs and avail our experts</p>
+
+                    <form action="https://formsubmit.co/2ce7a33469aca5cef40119fae27e4136" method="POST">
+                        <input type="text" name="name" id="Name" placeholder="Name*" required>
+                        <input type="email" name="email" id="email" placeholder="Email*" required>
+                        <!-- honeypot -->
+                        <input type="text" name="_honey" style="display: none;">
+                        <!-- captcha disable -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- thanks page -->
+                        <input type="hidden" name="_next" value="/thanks.html">
+                        <input type="tel" name="phone" id="phone" placeholder="Phone No*" required>
+                        <textarea name="message" id="" cols="25" rows="7" id="message" placeholder="Your Message"
+                            value="Your Message"></textarea>
+                        <div class="g-recaptcha" data-sitekey="6LdBlvsiAAAAAI-P7ckz5m_UyqySCYrIGQdQd1Ay"></div>
+                        <input type="submit">
+
+                    </form>
+                </div>
+                <div class="query-popup-form-inner-right">
+                    <div class="query-popup-form-inner-right-imgbox">
+                        <img src="https://th.bing.com/th/id/OIP.q8kR1AuomHqy-v8oOrlH5gHaD4?pid=ImgDet&w=768&h=402&rs=1"
+                            alt="">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- query popup coding -->
+    <div class="mainpage">
+        <div class="firstSection">
+            <div class="whatsapp">
+                <a href="https://wa.me/+919530051276"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <div class="talk-to-expert-fixed">
+                <button class="querybtn">Talk to expert</button>
+
+            </div>
+            <div class="header">
+                <div class="top-bar">
+                    <div class="top-bar-left">
+                        <div class="top-bar-email">
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto: guptah605@gmail.com">guptah605@gmail.com</a>
+                        </div>
+                        <div class="top-bar-contact">
+                            <i class="fa-sharp fa-solid fa-phone"></i>
+                            <a href="tel:+918058465484">+91 805 846 5484</a>
+                        </div>
+                        <div class="top-bar-skype">
+                            <i class="fa-brands fa-skype"></i>
+                            <a href="skype:example123?chat">Start Chat</a>
+                        </div>
+                    </div>
+                    <div class="top-bar-right">
+                        <a href="https://www.facebook.com/vikas.uttam.77"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/_.vikas._1710?r=nametag"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/+918058465484"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/company/param-pavitram-industries-pvt-ltd/"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+
+
+                    </div>
+                </div>
+                <div class="navbar">
+                    <img class="logo" src="/logo.png.png" alt="">
+                    <ul>
+                        <li><a href="">Company<i class="fa-solid fa-caret-down"></i></a></li>
+                        <li><a href="">Our Services<i class="fa-solid fa-caret-down"></i></a></li>
+                        <li><a href="">Industries<i class="fa-solid fa-caret-down"></i></a></li>
+                        <li><a href="">Hire Resources<i class="fa-solid fa-caret-down"></i></a></li>
+                        <li><a href="">Work<i class="fa-solid fa-caret-down"></i></a></li>
+                        <li><a href="">Blog<i class="fa-solid fa-caret-down"></i></a></li>
+                        <li><a href="">Contact Us<i class="fa-solid fa-caret-down"></i></a></li>
+                        <button class="nav-query-btn querybtn">Request A Call ></button>
+                        <div class="callbox">
+                            <i class="fas fa-phone-volume"></i>
+                            <div class="nav-call-hover-details">
+                                <div class="nav-call-hover-details-up">
+                                    <i class="fa-sharp fa-solid fa-phone"></i>
+                                    Let's Connect With Semidot Team
+                                </div>
+                                <div class="nav-call-hover-details-middle">
+                                    <p>For Sales Inquiry</p>
+                                    <div class="nav-call-hover-details-middlepart">
+                                        <i class="fa-sharp fa-solid fa-phone"></i>
+                                        <a href="tel:+918058465484">+91 805 846 5484</a>
+                                    </div>
+                                    <div class="nav-call-hover-details-middlepart">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <a href="mailto: guptah605@gmail.com">guptah605@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="nav-call-hover-details-down">
+                                    <p>For Quick Connect</p>
+                                    <div class="nav-call-hover-details-downpart">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                        <a href="https://wa.me/+918058465484">+91 805 846 5484</a>
+                                    </div>
+                                    <div class="nav-call-hover-details-downpart">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                        <a href="https://wa.me/+918058465484">+91 805 846 5484</a>
+                                    </div>
+                                    <div class="nav-call-hover-details-downpart">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                        <a href="https://wa.me/+918058465484">+91 805 846 5484</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="homeslider">
+                <div class="homeslider-div">
+                    <div class="homeslider-box" id="homeslider-1">
+                        <div class="homeslider-innerbox">
+                            <div class="homeslider-innerbox-left">
+                                <h1>Metaverse Development Company</h1>
+                                <p>Obtain the excellent Metaverse development services offered by SemiDot Infotech to
+                                    experience a whole new virtual world. Our team develops end-to-end Metaverse
+                                    solutions to unleash new opportunities and deliver real value to enterprises.</p>
+                                <a class="querybtn">Request a call</a>
+                                <a href="/download-files" download>Download Curriculum
+                                </a>
+                            </div>
+                            <div class="homeslider-innerbox-right">
+                                <img src="/04.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="homeslider-box" id="homeslider-2">
+                        <div class="homeslider-innerbox">
+                            <div class="homeslider-innerbox-left">
+                                <h1>Metaverse Development Company</h1>
+                                <p>Obtain the excellent Metaverse development services offered by SemiDot Infotech to
+                                    experience a whole new virtual world. Our team develops end-to-end Metaverse
+                                    solutions to unleash new opportunities and deliver real value to enterprises.</p>
+                                <a class="querybtn">Request a free demo </a>
+                                <a href="/download-files" download>Download Curriculum
+                                </a>
+                            </div>
+                            <div class="homeslider-innerbox-right">
+                                <img src="/03.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="homeslider-box" id="homeslider-3">
+                        <div class="homeslider-innerbox">
+                            <div class="homeslider-innerbox-left">
+                                <h1>Metaverse Development Company</h1>
+                                <p>Obtain the excellent Metaverse development services offered by SemiDot Infotech to
+                                    experience a whole new virtual world. Our team develops end-to-end Metaverse
+                                    solutions to unleash new opportunities and deliver real value to enterprises.</p>
+                                <a class="querybtn">Consult Experts </a>
+                                <a href="/download-files" download>Download Curriculum
+                                </a>
+                            </div>
+                            <div class="homeslider-innerbox-right">
+                                <img src="/04.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="homeslider-box" id="homeslider-4">
+                        <div class="homeslider-innerbox">
+                            <div class="homeslider-innerbox-left">
+                                <h1>Metaverse Development Company</h1>
+                                <p>Obtain the excellent Metaverse development services offered by SemiDot Infotech to
+                                    experience a whole new virtual world. Our team develops end-to-end Metaverse
+                                    solutions
+                                    to unleash new opportunities and deliver real value to enterprises.</p>
+                                <a class="querybtn">request-A-Quote</a>
+                                <a href="/download-files" download>Download Curriculum</a>
+                            </div>
+                            <div class="homeslider-innerbox-right">
+                                <img src="/03.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="thirdsection">
+            <div class="third-sec-left">
+                <h1>Enterprise <span class="auto-input"></span> development with field expertise and market insight.
+                    </h2>
+                    <p>We provide you with world-class services to bring enormous benefits to your business with
+                        state-of-the-art solutions and cost effective plans.</p>
+                    <button class="querybtn">Connect Our Expert</button>
+                    <button class="querybtn">Free Consultation</button>
+            </div>
+            <div class="third-sec-right">
+                <img src="/banner-img-transparent.png" alt="">
+            </div>
+        </div>
+        <div class="fourthsection">
+            <div class="fourth-sec-left">
+                <img src="/Block-chain.jpg" alt="">
+            </div>
+            <div class="fourth-sec-right">
+                <h2>Blockchain Development services</h2>
+                <p>As a top Blockchain app development company, we take it as our responsibility to help the
+                    technology grow further and beyond than how we already know it. We have helped businesses
+                    implement Blockchain in the most advanced areas, it has helped them spiral to the top. Our
+                    Blockchain development services range from everything the decentralized technology has on offer,
+                    be it contracts, or be it cryptocurrencies, we have worked the technology inside out to meet our
+                    clients’ demands. Our blockchain developers are experts in the technology, they have worked upon
+                    games, ICOs, exchange development, along with many other Blockchain implementations.</p>
+                <p>Our years of experience will help your business spiral to the peak possibilities, in the least
+                    money and time. Our Blockchain app development services are special for the way we handle your
+                    project requirements. We can formulate an execution plan as per your requirements, and with our
+                    years of experience, we will suggest you at the start, if we foresee something wrong which might
+                    result in unnecessary complications at a later stage. We will take care of your project from
+                    start to finish, the only hassle you will face is gathering initial project requirements, you
+                    can leave the rest upon us. </p>
+            </div>
+        </div>
+
+        <div class="fifthsection">
+            <h1>Blockchain Offerings</h1>
+            <div class="line"></div>
+            <div class="fifthsection-row">
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>DeFi Devlopment</h2>
+                        <p>Leverage the power of DeFi Devlopmentto stand out in the crypto space. Backed by Ethereum
+                            blockchain, we will help you design completely decentralized and transparent platforms and
+                            financial products on the most trusted DeFi Devlopmentprotocols. </p>
+                </div>
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>Exchange Devlopment </h2>
+                        <p>On-demand decentralized, centralized, and P2P exchange platform development backed by
+                            powerful trading engines, multi-layer security, high TPS, liquidity and a self-explanatory
+                            admin panel. </p>
+                </div>
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>Wallet Devlopment </h2>
+                        <p>On-demand decentralized and centralized wallet development with advanced multi-currency
+                            wallets underpinned with industry-approved security features like 2FA, multisig support,
+                            biometric authentication and more.</p>
+                </div>
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>Metavesre Devlopment</h2>
+                        <p>Get future ready and launch a Metaverse specific to your business needs. We take care of
+                            everything be it the frontend or backend development, hosting your Metaverse project or
+                            maintaining/upgrading services regularly.</p>
+                </div>
+            </div>
+            <div class="fifthsection-row">
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>NFTs & NFT MarketplacesDeFi Devlopment </h2>
+                        <p>Invest in our robust end-to-end NFT & marketplace development services to trade non-fungible
+                            tokens securely. We use impressive token stands to develop an exceptional NFT smart contract
+                            auditing solution for you.</p>
+                </div>
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>Custom Blockchain Devlopment </h2>
+                        <p>Capitalize on Blockchain technology to achieve complete transparency and automation in varied
+                            business processes. Our Blockchain solutions are tailored to help businesses combat
+                            operational and strategic risks. </p>
+                </div>
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>Crypto Bank Devlopment </h2>
+                        <p>Be a frontrunner and set a new benchmark in the futuristic banking space. With proven
+                            expertise in digital asset technology, we will help you build an integrated banking platform
+                            around core crypto-banking capabilities. </p>
+                </div>
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>Smart Contract Devlopment </h2>
+                        <p>Empower enterprises with a secure smart contract aligned with their business requirements.
+                            From finance to insurance, we create smart contracts tailored perfectly to diverse
+                            industries and business models. </p>
+                </div>
+            </div>
+            <div class="fifthsection-row">
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>Smart Contract Audit Devlopment</h2>
+                        <p>Automate your processes, transactions and agreements while improving security and reducing
+                            costs with a smart contract. Our comprehensive services span smart contract design,
+                            development, auditing and optimization.</p>
+                </div>
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>Coin & Token Devlopment</h2>
+                        <p>Get scalable and secure coin/token development services with secured functionalities. We use
+                            advanced customizable solutions to develop advanced crypto coins to add value to your
+                            business.
+                            . </p>
+                </div>
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>IDO Devlopment</h2>
+                        <p>Raise capital in crypto tokens with Antier’s comprehensive IDO development services.
+                            End-to-end IDO development solutions include strategy design, query-popup-formpaper
+                            drafting, token
+                            development, token listing advisory, marketing, and support.</p>
+                </div>
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>query-popup-formpaper Devlopment</h2>
+                        <p>Get an authoritative and comprehensive query-popup-form paper copy for your upcoming
+                            ICO/ITO/STO
+                            project. We ensure your query-popup-form paper is self-explanatory and easy to understand to
+                            attract
+                            investors.</p>
+                </div>
+            </div>
+            <div class="fifthsection-row">
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>OTC Devlopment</h2>
+                        <p>Amplify your revenues by integrating OTC trading into your crypto exchange. Eliminate
+                            slippage and provide liquidity to your exchange users while enabling them to exchange large
+                            amounts of cryptocurrency anonymously. </p>
+                </div>
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>Margin Devlopment</h2>
+                        <p> Reinforce your exchange with margin trading to empower your users to amplify their gain from
+                            market swings. Advanced trading engine for users to go long or short on various
+                            cryptocurrencies by up to 100 times. </p>
+                </div>
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>DeFi Devlopment</h2>
+                        <p>Leverage the power of DeFi Devlopmentto stand out in the crypto space. Backed by Ethereum
+                            blockchain, we will help you design completely decentralized and transparent platforms and
+                            financial products on the most trusted DeFi Devlopmentprotocols. </p>
+                </div>
+                <div class="fifthsection-row-textbox">
+                    <i class="fa-brands fa-hive"></i>
+                    <h3>Derivatives Devlopment</h2>
+                        <p>Reinforce your crypto exchange with derivatives trading to let your users speculate on the
+                            market position and alleviate the risk. Our customized solutions to integrate your exchange
+                            with Futures Contracts and Perpetual Contracts.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blankwrapper"></div>
+        <div class="wrapper">
+            <div class="innerwrapper">
+
+                <div class="fwrapper">
+                    <div class="wrapperheadingbox">
+                        <div class="wrapperheading">Trendings</div>
+                        <div class="wrapperheadingline"></div>
+                    </div>
+                    <input class="radio" id="one" name="group" type="radio" checked>
+                    <input class="radio" id="two" name="group" type="radio">
+                    <input class="radio" id="three" name="group" type="radio">
+                    <input class="radio" id="four" name="group" type="radio">
+                    <input class="radio" id="five" name="group" type="radio">
+                    <div class="tabs">
+                        <label class="tab" id="one-tab" for="one">Metaverse</label>
+                        <label class="tab" id="two-tab" for="two">NFT</label>
+                        <label class="tab" id="three-tab" for="three">DEFI</label>
+                        <label class="tab" id="four-tab" for="four">Coin Development</label>
+                        <label class="tab" id="five-tab" for="five">Crypto Clones</label>
+
+                    </div>
+                    <div class="panels">
+                        <div class="panel" id="one-panel">
+                            <div class="panel-row">
+                                <div class="panel-left">
+                                    <h2 class="panel-title">Exchange Development</h2>
+                                    <p>Metaverse development has made a new revolution to the internet world where
+                                        everyone
+                                        can
+                                        interact and even live their life in the digital world and do all the real life
+                                        activities
+                                        of the person in this platform.</p>
+                                    <p>We at shamla tech are well equipped to create an exclusive and custom metaverse
+                                        platform
+                                        that
+                                        fulfills various purposes. Our experts assure that virtual environment will
+                                        include
+                                        a
+                                        broad
+                                        range of interactions and functionality that will surely bring great value to
+                                        your
+                                        business.
+                                    </p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="panel-right">
+                                    <img src="/metaverse-01.svg" alt="">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="panel" id="two-panel">
+                            <div class="panel-row">
+                                <div class="panel-left">
+                                    <h2 class="panel-title">Exchange Development</h2>
+                                    <p>NFTs are the new trend in the market that helps to digitalize masterpieces and
+                                        different
+                                        collectibles into exceptional, obvious resources that are easy to exchange on
+                                        the
+                                        blockchain. Non-Fungible Tokens have made their way into crypto market and
+                                        quickly
+                                        has
+                                        garnered considerable amounts of capital in no time.</p>
+                                    <p>With the people starting to adapt to the world of crypto-currencies, Shamla tech
+                                        provides
+                                        exclusive solutions to tokenize your assets to retain their credibility and
+                                        rareness.
+                                    </p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="panel-right">
+                                    <img src="/metaverse-01.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel" id="three-panel">
+                            <div class="panel-row">
+                                <div class="panel-left">
+                                    <h2 class="panel-title">Exchange Development</h2>
+                                    <p>DeFi or open finance is the brand new monetary system simplifies the financial
+                                        systems.
+                                        In contrast to the decentralization of money through Bitcoin, the new platform
+                                        aims
+                                        for
+                                        a broader approach of generally decentralizing the traditional financial
+                                        industry.
+                                        The
+                                        components of defi consist of defi tokens, dApps and smart contracts, which are
+                                        built on
+                                        Blockchain.</p>
+                                    <p>Our experts here assure to the built the much sort after platform with
+                                        specialized
+                                        solutions at your budget in no time.</p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="panel-right">
+                                    <img src="/metaverse-01.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel" id="four-panel">
+                            <div class="panel-row">
+                                <div class="panel-left">
+                                    <h2 class="panel-title">Note on Prerequisites</h2>
+                                    <p>Crypto coins are the all time trend in the market. We are always updated with the
+                                        latest
+                                        technologies and trends in the crypto market. Our experienced team has already
+                                        well-versed in providing customized crypto coin and token development services.
+                                        We
+                                        have
+                                        completed 50+ cryptocurrency projects and witnessed their successful run in the
+                                        market.
+                                    </p>
+                                    <p>Our proficient development team ensures specialized coin development services
+                                        that
+                                        will
+                                        suit your business and trade needs the best.</p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="panel-right">
+                                    <img src="/metaverse-01.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel" id="five-panel">
+                            <div class="panel-row">
+                                <div class="panel-left">
+                                    <h2 class="panel-title">Note on Prerequisites</h2>
+                                    <p>The developers at shamla tech are highly experienced in providing potent clones
+                                        of
+                                        popular cryptocurrency exchanges. The company provides readymade and
+                                        customizable
+                                        software services, thereby speeding up deployment and instant launching
+                                        processes.
+                                    </p>
+                                    <p>The developers at shamla tech are highly experienced in providing potent clones
+                                        of
+                                        popular cryptocurrency exchanges. The company provides readymade and
+                                        customizable
+                                        software services, thereby speeding up deployment and instant launching
+                                        processes.
+                                    </p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="panel-right">
+                                    <img src="/metaverse-01.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swrapper">
+                    <div class="wrapperheadingbox">
+                        <div class="wrapperheading">Trendings</div>
+                        <div class="wrapperheadingline"></div>
+                    </div>
+                    <input class="sradio" id="sone" name="sgroup" type="radio" checked>
+                    <input class="sradio" id="stwo" name="sgroup" type="radio">
+                    <input class="sradio" id="sthree" name="sgroup" type="radio">
+                    <input class="sradio" id="sfour" name="sgroup" type="radio">
+                    <input class="sradio" id="sfive" name="sgroup" type="radio">
+                    <div class="stabs">
+                        <label class="tab" id="sone-tab" for="sone">Coin/Token</label>
+                        <label class="tab" id="stwo-tab" for="stwo">Wallet</label>
+                        <label class="tab" id="sthree-tab" for="sthree">cryptocurrency Marketing</label>
+                        <label class="tab" id="sfour-tab" for="sfour">Coin Development</label>
+                        <!-- <label class="tab" id="sfive-tab" for="sfive">cryptocurrencies Payment Gateway</label> -->
+
+                    </div>
+                    <div class="spanels">
+                        <div class="spanel" id="sone-panel">
+                            <div class="spanel-row">
+                                <div class="spanel-left">
+                                    <p>Proficient developers at Shamla tech provide innovative and latest technology
+                                        services
+                                        for building a robust cryptocurrency coin. The company extends cutting edge
+                                        services
+                                        from expert developers at creating a custom new cryptocurrency or like popular
+                                        cryptocurrencies like Bitcoin, Ethereum etc.</p>
+                                    <p>Our cryptocurrency developers are always up to the updates and employ the newest
+                                        of
+                                        features in the crypto market. Our cryptocurrency deliverables exhibit a very
+                                        high
+                                        performance thereby easily reaching the trade goals..
+                                    </p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="spanel-right">
+                                    <img src="/coin-token.png" alt="">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="spanel" id="stwo-panel">
+                            <div class="spanel-row">
+                                <div class="spanel-left">
+                                    <h2 class="spanel-title">Exchange Development</h2>
+                                    <p>ghcvghcNFTs are the new trend in the market that helps to digitalize masterpieces
+                                        and
+                                        different
+                                        collectibles into exceptional, obvious resources that are easy to exchange on
+                                        the
+                                        blockchain. Non-Fungible Tokens have made their way into crypto market and
+                                        quickly
+                                        has
+                                        garnered considerable amounts of capital in no time.</p>
+                                    <p>With the people starting to adapt to the world of crypto-currencies, Shamla tech
+                                        provides
+                                        exclusive solutions to tokenize your assets to retain their credibility and
+                                        rareness.
+                                    </p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="spanel-right">
+                                    <img src="/metaverse-01.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="spanel" id="sthree-panel">
+                            <div class="spanel-row">
+                                <div class="spanel-left">
+                                    <h2 class="spanel-title">Exchange Development</h2>
+                                    <p>DeFi or open finance is the brand new monetary system simplifies the financial
+                                        systems.
+                                        In contrast to the decentralization of money through Bitcoin, the new platform
+                                        aims
+                                        for
+                                        a broader approach of generally decentralizing the traditional financial
+                                        industry.
+                                        The
+                                        components of defi consist of defi tokens, dApps and smart contracts, which are
+                                        built on
+                                        Blockchain.</p>
+                                    <p>Our experts here assure to the built the much sort after platform with
+                                        specialized
+                                        solutions at your budget in no time.</p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="spanel-right">
+                                    <img src="/metaverse-01.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spanel" id="sfour-panel">
+                            <div class="spanel-row">
+                                <div class="spanel-left">
+                                    <h2 class="spanel-title">Note on Prerequisites</h2>
+                                    <p>Crypto coins are the all time trend in the market. We are always updated with the
+                                        latest
+                                        technologies and trends in the crypto market. Our experienced team has already
+                                        well-versed in providing customized crypto coin and token development services.
+                                        We
+                                        have
+                                        completed 50+ cryptocurrency projects and witnessed their successful run in the
+                                        market.
+                                    </p>
+                                    <p>Our proficient development team ensures specialized coin development services
+                                        that
+                                        will
+                                        suit your business and trade needs the best.</p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="spanel-right">
+                                    <img src="/metaverse-01.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spanel" id="sfive-panel">
+                            <div class="spanel-row">
+                                <div class="spanel-left">
+                                    <h2 class="spanel-title">Note on Prerequisites</h2>
+                                    <p>The developers at shamla tech are highly experienced in providing potent clones
+                                        of
+                                        popular cryptocurrency exchanges. The company provides readymade and
+                                        customizable
+                                        software services, thereby speeding up deployment and instant launching
+                                        processes.
+                                    </p>
+                                    <p>The developers at shamla tech are highly experienced in providing potent clones
+                                        of
+                                        popular cryptocurrency exchanges. The company provides readymade and
+                                        customizable
+                                        software services, thereby speeding up deployment and instant launching
+                                        processes.
+                                    </p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="spanel-right">
+                                    <img src="/metaverse-01.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="twrapper">
+                    <div class="wrapperheadingbox">
+                        <div class="wrapperheading">Trendings</div>
+                        <div class="wrapperheadingline"></div>
+                    </div>
+                    <input class="tradio" id="tone" name="tgroup" type="radio" checked>
+                    <input class="tradio" id="ttwo" name="tgroup" type="radio">
+                    <input class="tradio" id="tthree" name="tgroup" type="radio">
+                    <input class="tradio" id="tfour" name="tgroup" type="radio">
+                    <input class="tradio" id="tfive" name="tgroup" type="radio">
+                    <div class="ttabs">
+                        <label class="ttab" id="tone-tab" for="tone">Crypto-Exchange</label>
+                        <label class="ttab" id="ttwo-tab" for="ttwo">Wallet</label>
+                        <label class="ttab" id="tthree-tab" for="tthree">cryptocurrency Marketing</label>
+                        <label class="ttab" id="tfour-tab" for="tfour">Coin Development</label>
+                        <!-- <label class="ttab" id="tfive-tab" for="tfive">cryptocurrencies Payment Gateway</label> -->
+
+                    </div>
+                    <div class="tpanels">
+                        <div class="tpanel" id="tone-panel">
+                            <div class="tpanel-row">
+                                <div class="tpanel-left">
+                                    <p>Our crypto exchange app facilitates easy trading between hundreds of
+                                        cryptocurrencies without any inconvenience. Enjoy utmost security with highly
+                                        safeguarded wallet with multiple private keys, biometric access and two-step
+                                        authentication features.</p>
+                                    <p>Our user friendly app also holds major features like</p>
+                                    <ul>
+                                        <li>Margin Trading API</li>
+                                        <li>KYC/ AML compliance</li>
+                                        <li>Multiple Currency Pairing</li>
+                                        <li>Escrow system</li>
+                                    </ul>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="tpanel-right">
+                                    <img src="/Crypto-Exchange.png" alt="">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tpanel" id="ttwo-panel">
+                            <div class="tpanel-row">
+                                <div class="tpanel-left">
+                                    <h2 class="tpanel-title">Exchange Development</h2>
+                                    <p>NghgFTs are the new trend in the market that helps to digitalize masterpieces and
+                                        different
+                                        collectibles into exceptional, obvious resources that are easy to exchange on
+                                        the
+                                        blockchain. Non-Fungible Tokens have made their way into crypto market and
+                                        quickly
+                                        has
+                                        garnered considerable amounts of capital in no time.</p>
+                                    <p>With the people starting to adapt to the world of crypto-currencies, Shamla tech
+                                        provides
+                                        exclusive solutions to tokenize your assets to retain their credibility and
+                                        rareness.
+                                    </p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="tpanel-right">
+                                    <img src="/metaverse-01.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tpanel" id="tthree-panel">
+                            <div class="tpanel-row">
+                                <div class="tpanel-left">
+                                    <h2 class="tpanel-title">Exchange Development</h2>
+                                    <p>DeFi or open finance is the brand new monetary system simplifies the financial
+                                        systems.
+                                        In contrast to the decentralization of money through Bitcoin, the new platform
+                                        aims
+                                        for
+                                        a broader approach of generally decentralizing the traditional financial
+                                        industry.
+                                        The
+                                        components of defi consist of defi tokens, dApps and smart contracts, which are
+                                        built on
+                                        Blockchain.</p>
+                                    <p>Our experts here assure to the built the much sort after platform with
+                                        specialized
+                                        solutions at your budget in no time.</p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="tpanel-right">
+                                    <img src="/metaverse-01.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tpanel" id="tfour-panel">
+                            <div class="tpanel-row">
+                                <div class="tpanel-left">
+                                    <h2 class="tpanel-title">Note on Prerequisites</h2>
+                                    <p>Crypto coins are the all time trend in the market. We are always updated with the
+                                        latest
+                                        technologies and trends in the crypto market. Our experienced team has already
+                                        well-versed in providing customized crypto coin and token development services.
+                                        We
+                                        have
+                                        completed 50+ cryptocurrency projects and witnessed their successful run in the
+                                        market.
+                                    </p>
+                                    <p>Our proficient development team ensures specialized coin development services
+                                        that
+                                        will
+                                        suit your business and trade needs the best.</p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="tpanel-right">
+                                    <img src="/metaverse-01.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tpanel" id="tfive-panel">
+                            <div class="tpanel-row">
+                                <div class="tpanel-left">
+                                    <h2 class="tpanel-title">Note on Prerequisites</h2>
+                                    <p>The developers at shamla tech are highly experienced in providing potent clones
+                                        of
+                                        popular cryptocurrency exchanges. The company provides readymade and
+                                        customizable
+                                        software services, thereby speeding up deployment and instant launching
+                                        processes.
+                                    </p>
+                                    <p>The developers at shamla tech are highly experienced in providing potent clones
+                                        of
+                                        popular cryptocurrency exchanges. The company provides readymade and
+                                        customizable
+                                        software services, thereby speeding up deployment and instant launching
+                                        processes.
+                                    </p>
+                                    <a class="querybtn">Talk to our experts</a>
+                                </div>
+                                <div class="tpanel-right">
+                                    <img src="/metaverse-01.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="sixthsection">
+            <h1>The reason we call custom blockchain application devlopment our core experties</h1>
+            <p>Blockchain technology has a lot to offer, here are the most demanded verticles we have and currently work
+                in </p>
+            <div class="sixthsection-row">
+                <div class="sixthsection-row-textbox">
+
+                    <img src="https://semidotinfotech.com/web/images/ICOLaunch.svg" alt="">
+
+                    <h3>ICO Launch</h3>
+                    <p>We have successfully launched many ICOs for our clients and can do the same for you, if you
+                        believe you need an ICO for your company, contact us for a walkthrough</p>
+                </div>
+                <div class="sixthsection-row-textbox">
+
+                    <img src="https://semidotinfotech.com/web/images/dappsDevelopment.svg" alt="">
+
+                    <h3>DApps</h3>
+                    <p>We have successfully launched many ICOs for our clients and can do the same for you, if you
+                        believe you need an ICO for your company, contact us for a walkthrough</p>
+                </div>
+                <div class="sixthsection-row-textbox">
+
+                    <img src="https://semidotinfotech.com/web/images/smartContracts.svg" alt="">
+
+                    <h3>Smart contracts</h3>
+                    <p>We have successfully launched many ICOs for our clients and can do the same for you, if you
+                        believe you need an ICO for your company, contact us for a walkthrough</p>
+                </div>
+            </div>
+        </div>
+        <div class="seventhsection">
+            <h2><span>Industry application</span> for Blockchain technology</h2>
+            <div class="seventhsection-line"></div>
+            <p>Blockchain technology is predicted to disrupt at least few of the following industries.</p>
+
+            <div class="seventhsection-grid">
+                <div class="seventhsection-box" id="seventhsection-box1">
+                    <div class="seventhsection-innerbox">
+                        <h3>Blockchain for banks & financial</h3>
+                        <h4>Technology</h4>
+                        <p>The insurance industry will be revolutionized due to the incorruptible nature of the data,
+                            which ensures transparency in the system.</p>
+                    </div>
+                </div>
+                <div class="seventhsection-box" id="seventhsection-box2">
+                    <div class="seventhsection-innerbox">
+                        <h3>Blockchain for banks & financial</h3>
+                        <h4>Technology</h4>
+                        <p>The insurance industry will be revolutionized due to the incorruptible nature of the data,
+                            which ensures transparency in the system.</p>
+                    </div>
+                </div>
+                <div class="seventhsection-box" id="seventhsection-box3">
+                    <div class="seventhsection-innerbox">
+                        <h3>Blockchain for banks & financial</h3>
+                        <h4>Technology</h4>
+                        <p>The insurance industry will be revolutionized due to the incorruptible nature of the data,
+                            which ensures transparency in the system.</p>
+                    </div>
+                </div>
+                <div class="seventhsection-box" id="seventhsection-box4">
+                    <div class="seventhsection-innerbox">
+                        <h3>Blockchain for banks & financial</h3>
+                        <h4>Technology</h4>
+                        <p>The insurance industry will be revolutionized due to the incorruptible nature of the data,
+                            which ensures transparency in the system.</p>
+                    </div>
+                </div>
+                <div class="seventhsection-box" id="seventhsection-box5">
+                    <div class="seventhsection-innerbox">
+                        <h3>Blockchain for banks & financial</h3>
+                        <h4>Technology</h4>
+                        <p>The insurance industry will be revolutionized due to the incorruptible nature of the data,
+                            which ensures transparency in the system.</p>
+                    </div>
+                </div>
+                <div class="seventhsection-box" id="seventhsection-box6">
+                    <div class="seventhsection-innerbox">
+                        <h3>Blockchain for banks & financial</h3>
+                        <h4>Technology</h4>
+                        <p>The insurance industry will be revolutionized due to the incorruptible nature of the data,
+                            which ensures transparency in the system.</p>
+                    </div>
+                </div>
+                <div class="seventhsection-box" id="seventhsection-box7">
+                    <div class="seventhsection-innerbox">
+                        <h3>Blockchain for banks & financial</h3>
+                        <h4>Technology</h4>
+                        <p>The insurance industry will be revolutionized due to the incorruptible nature of the data,
+                            which ensures transparency in the system.</p>
+                    </div>
+                </div>
+                <div class="seventhsection-box" id="seventhsection-box8">
+                    <div class="seventhsection-innerbox">
+                        <h3>Blockchain for banks & financial</h3>
+                        <h4>Technology</h4>
+                        <p>The insurance industry will be revolutionized due to the incorruptible nature of the data,
+                            which ensures transparency in the system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faqs">
+
+            <h2>FAQs</h2>
+            <p>Tying loose ends regarding Blockchain is tough, but to give you some clarity, here are the top FAQs by
+                our previous clients.</p>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <a>What can JavaScript Do?</a>
+                    <div class="content">
+                        <p>The best blockchain app development company is one that can comprehend your idea and
+                            implement it on the decentralized systems, it seems easy but it much difficult due to the
+                            decentralized system’s general nature. If you are confused regarding anything, you can send
+                            us your requirements, we will get back to you within 24 hours with a free evaluation</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <a>How JavaScript Can Modify HTML and CSS Values?</a>
+                    <div class="content">
+                        <p>We offer a completely free of cost after delivery support, for all the bugs and errors that
+                            may occur. We also offer exciting deals to those who are looking forward to future forks, so
+                            you can have peace of mind under any future circumstances. We believe it’s the least we can
+                            do for the clients that trust us for building their projects, so 3-month free support is on
+                            us.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <a>What Is SVG?</a>
+                    <div class="content">
+                        <p>Even though blockchain is the buzzword right now, there are a lot more decentralized
+                            technologies in works. We will choose the one which best suits your project requirements,
+                            other than that, it’s the implementation you are looking forward to, for Dapps, Blockchain
+                            tops in popularity, while for smart contracts, Ethereum does. So, we will have to go through
+                            the implementations you are looking forward to, to tell you if the technology you target
+                            matters.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <a>Is FAQ Section Matters In Website?</a>
+                    <div class="content">
+                        <p>If your idea requires a Dapp or token to be built, we will walk you through the entire
+                            process. We have implemented many exciting blockchain projects for our clients, if your
+                            business requires decentralization as any of your services, we suggest you go ahead with it.
+                            Just send in your requirements for a free consultation, we will let you know the
+                            feasibility, as well as, the cost associated with the Blockchain application you are looking
+                            forward to.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <a>How To Create a Light FAQ Element?</a>
+                    <div class="content">
+                        <p>Blockchain is known as a system of data stored in a way that no one can easily access, alter,
+                            or hack. It is a decentralized digital ledger presented on several computers simultaneously.
+                            All the information is stored within the chain of blocks including a different hash value;
+                            hence it makes the data modification impossible. Acquiring Blockchain development services
+                            provides a lot of benefits such as a more secure & transparent environment, better ROI,
+                            remote areas penetration, etc.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <a>How To Create a Light FAQ Element?</a>
+                    <div class="content">
+                        <p>Semidot has an expert team when it comes to providing custom Blockchain development
+                            solutions. Different Blockchain platforms we work upon are Ethereum, Avalanche, Hyperledger,
+                            Ripple, R3 Corda, etc. Among all these platforms, clients can choose any of them.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <a>How To Create a Light FAQ Element?</a>
+                    <div class="content">
+                        <p>There can be an estimated cost for Blockchain app development services but not the exact one.
+                            The overall Blockchain app development cost is based upon diverse factors such as app
+                            complexity, number of app stakeholders, industry compliances, and many more. We can provide
+                            you with an estimation after analyzing these factors.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed(".auto-input", {
+            strings: ["blockchain", "NFT marketplace", "metaverse platform"],
+            typeSpeed: 100,
+            backspeed: 100,
+            loop: true
+
+        })
+    </script>
+    <script>
+
+        // Code By Webdevtrick ( https://webdevtrick.com )
+        const items = document.querySelectorAll(".accordion a");
+
+        function toggleAccordion() {
+            this.classList.toggle('active');
+            this.nextElementSibling.classList.toggle('active');
+        }
+
+        items.forEach(item => item.addEventListener('click', toggleAccordion));
+    </script>
+
+    <!-- this is tidio chatting app -->
+    <script src="//code.tidio.co/ec87z8w1fovco3krizcyu28hkyz0fqgm.js" async></script>
+
+    <!-- this is jquery link -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- for adding a navbar-fixed class -->
+
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 200) {
+                    $('.navbar').addClass('navbar-fixed');
+                } else {
+                    $('.navbar').removeClass('navbar-fixed');
+                }
+            });
+        });
+    </script>
+    <script>
+        let querybtn = document.querySelectorAll(".querybtn");
+        let querypopup = document.querySelector(".query-popup");
+        let close = document.querySelector(".close");
+
+        $(document).ready(function () {
+            $(querybtn).click(function () {
+                $(querypopup).addClass("show");
+            })
+        })
+        $(document).ready(function () {
+            $(close).click(function () {
+                $(querypopup).removeClass("show");
+            })
+        })
+    </script>
+</body>
+
+</html>
